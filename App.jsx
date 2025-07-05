@@ -1,5 +1,6 @@
 import { View } from "react-native"
 import Counter from "./src/Counter";
+import SignupForm from "./src/SignupForm";
 
 
 
@@ -7,7 +8,8 @@ import Counter from "./src/Counter";
 const App=()=>{
   return(
     <View>
-<Counter/>
+{/* <Counter/> */}
+<SignupForm/>
     </View>
   )
 }
