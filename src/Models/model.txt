@@ -1,0 +1,8 @@
+✅ Props of Modal Component
+Prop	Description
+visible	Boolean to control the visibility of the modal
+animationType	Controls animation: "none", "slide", or "fade"
+transparent	If true, modal background is transparent
+onRequestClose	Required on Android for back button handling
+onShow	Callback when the modal is shown
+presentationStyle	iOS only - "fullScreen", "pageSheet", etc.
