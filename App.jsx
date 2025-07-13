@@ -7,6 +7,7 @@
 import { View } from "react-native"
 import AsyncStorage from "./src/AsyncStorage/AsyncStorage";
 import AsyncStorageDemo from "./src/AsyncStorage/AsyncStorage";
+import ScrollviewData from "./src/Scrollview/ScrollviewData";
 
 
 
@@ -259,7 +260,8 @@ import AsyncStorageDemo from "./src/AsyncStorage/AsyncStorage";
 const App=()=>{
   return(
     <View>
-<AsyncStorageDemo/>
+{/* <AsyncStorageDemo/> */}
+<ScrollviewData/>
     </View>
   )
 }
