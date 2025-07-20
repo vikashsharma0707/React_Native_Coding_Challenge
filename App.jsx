@@ -4,11 +4,13 @@
 // // // // import AlertBox from "./src/Alert/AlertBox";
 // // // // import ToastMessage from "./src/Alert/ToastMessage";
 
-import { View } from "react-native"
+// import { View } from "react-native"
 import AsyncStorage from "./src/AsyncStorage/AsyncStorage";
 import AsyncStorageDemo from "./src/AsyncStorage/AsyncStorage";
 import ScrollviewData from "./src/Scrollview/ScrollviewData";
 import StylesheetData from "./src/components/StylesheetData";
+import HomeScreen from "./src/SwitchToogleApp/Screens/HomeScreen";
+import SectionListData from "./src/SectionList/SectionListData";
 
 
 
@@ -258,14 +260,67 @@ import StylesheetData from "./src/components/StylesheetData";
 // });
 
 
-const App=()=>{
-  return(
-    <View>
-{/* <AsyncStorageDemo/> */}
-{/* <ScrollviewData/> */}
-<StylesheetData/>
+// const App=()=>{
+//   return(
+//     <View>
+// {/* <AsyncStorageDemo/> */}
+// {/* <ScrollviewData/> */}
+// {/* <StylesheetData/> */}
+// {/* <HomeScreen/> */}
+// {/* <SectionListData/> */}
+//     </View>
+//   )
+// }
+
+// export default App;
+
+
+
+
+
+import React from 'react';
+import { SectionList, Text, View } from 'react-native';
+
+const App = () => {
+  const Data = [
+    {
+      title: "Fruits",
+      data: ["Apple", "Banana"]
+    },
+    {
+      title: "Vegetables",
+      data: ["Carrot", "Broccoli"]
+    }
+  ];
+
+  const renderItem = ({ item }) => {
+    return (
+      <View>
+        <Text>{item}</Text>
+      </View>
+    );
+  };
+
+  const renderSectionHeader = ({ section }) => {
+    return (
+      <View>
+        <Text style={{ fontWeight: 'bold', fontSize: 18 }}>{section.title}</Text>
+      </View>
+    );
+  };
+
+  return (
+    <View style={{ padding: 20 }}>
+      <Text style={{ fontSize: 22, fontWeight: 'bold', marginBottom: 10 }}>SectionList</Text>
+
+      <SectionList
+        sections={Data}
+        renderItem={renderItem}
+        renderSectionHeader={renderSectionHeader}
+        keyExtractor={(item, index) => item + index}
+      />
     </View>
-  )
-}
+  );
+};
 
 export default App;
